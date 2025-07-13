@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <header>
+   @*  <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">WebApplication1</a>
@@ -30,13 +30,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Error">Error</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
+    </header> *@
+ @*    
     <div class="container">
         <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div> *@
+
+    <div class="">
+        <main role="main" >
             @RenderBody()
         </main>
     </div>

@@ -48,10 +48,12 @@
     font-size: 14px;
     font-family: "Amazon Ember", Arial, sans-serif;
     margin-left:20px;
+    background-color:#fff;
 }
 .customalert-info {
     color: black;
     background-color: #ecf7fa;
+
     border-color: lightgray;
     padding:8px;
     margin-left:13px;
