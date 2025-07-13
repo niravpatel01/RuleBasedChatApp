@@ -1,0 +1,63 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Chatbot";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Support Chatbot</h5>
+        </div>
+        <div class="card-body" style="height: 500px; overflow-y: auto; background-color: #f9f9f9;padding-left:0px;padding-right:0px;">
+            @foreach (var msg in Model.ChatMessages)
+            {
+                <div class="mb-2">
+                    <div class=" @(msg.From == "bot" ? "questdiv text-start" : "alert customalert-info")">
+
+                        @if (msg.From == "bot")
+                        {
+                            <i class="bi bi-robot" style="font-size:18px;margin-right:10px;"></i>
+                        }
+                        else
+                        {
+                          
+                            <i class="bi bi-person-circle" style="font-size:18px;margin-right:10px;"></i>
+                        }
+
+                        @msg.Text
+                    </div>
+                </div>
+
+
+
+
+
+            }
+
+            @if (Model.Options.Any())
+            {
+                <form method="post" id="optionForm" class="mt-3">
+                    <div class="d-flex flex-column gap-2">
+                        @foreach (var option in Model.Options)
+                        {
+                            <input type="radio"
+                                   class="btn-check"
+                                   name="selectedOption"
+                                   id="@option"
+                                   value="@option"
+                                   onchange="document.getElementById('optionForm').submit();" />
+
+                            <label class="btn btn-outline-light text-dark border rounded shadow-sm text-start px-4 py-2"
+                                   for="@option"
+                                   style="margin-left:20px; border-color: #ccc;">
+                                @option
+                            </label>
+                        }
+                    </div>
+                </form>
+            }
+
+        </div>
+    </div>
+</div>

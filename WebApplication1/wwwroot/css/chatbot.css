@@ -1,0 +1,60 @@
+.chat-container {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    font-family: Arial;
+}
+.bot-message, .user-message {
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 20px;
+    display: inline-block;
+    max-width: 80%;
+}
+.bot-message {
+    background-color: #e9ecef;
+    color: #000;
+    text-align: left;
+}
+.user-message {
+    background-color: #cce5ff;
+    color: #004085;
+    text-align: left;
+    margin-left: auto;
+    display: block;
+}
+.btn-check:checked + label {
+/*    background-color: #cce5ff;
+*/ /*   border-color: #66afe9;
+    color: #004085;*/
+    font-weight: 500;
+
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 5px rgba(213, 217, 217, 0.5);
+    background-color: white;
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+
+
+
+}
+.questdiv {
+    font-size: 14px;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    margin-left:20px;
+}
+.customalert-info {
+    color: black;
+    background-color: #ecf7fa;
+    border-color: lightgray;
+    padding:8px;
+    margin-left:13px;
+}
+
+
