@@ -115,7 +115,7 @@ namespace WebApplication1.Pages
         public void OnPostOption(string selectedOption)
         {
 
-            if (selectedOption.Equals("An unknown charge"))
+            if (selectedOption.ToLower().Contains("help with something else"))
             {
                 ChatMessages.Clear();
                 ChatMessages.Add(new Message { From = "bot", Text = "Hello! How can I help you today?" });
