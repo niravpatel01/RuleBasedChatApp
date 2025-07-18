@@ -75,8 +75,8 @@ Clone the repository:
 
 Bash
 
-git clone https://github.com/your_username/your_repository_name.git
-cd your_repository_name
+git clone https://github.com/niravpatel01/RuleBasedChatApp.git
+cd RuleBasedChatApp
 Restore NuGet packages:
 
 Bash
@@ -109,20 +109,7 @@ Example:
 
 Once the application is running, you will see a chat interface. Type your questions into the input box and press Enter or click the "Send" button. The chatbot will then attempt to find a relevant answer from the loaded Excel file. If a direct match or a sufficiently close keyword match is found, the answer will be displayed. Otherwise, a default "I don't understand" message will appear.
 
-Project Structure
-Give an overview of the important directories and files. This helps others navigate your codebase.
 
-your_repository_name/
-├── Pages/                 # Razor Pages for UI (Index.cshtml, Index.cshtml.cs)
-├── Data/                  # Contains the local Excel file (e.g., chatbot_data.xlsx)
-├── Models/                # Data models (e.g., ChatMessage.cs, ExcelDataReader.cs)
-├── Services/              # Business logic (e.g., ChatbotService.cs for processing queries)
-├── wwwroot/               # Static files (CSS, JS, images - could also contain Excel file)
-├── appsettings.json       # Application configuration
-├── Program.cs             # Application startup
-├── your_project_name.csproj # Project file
-├── README.md              # This file
-└── etc.
 Key Files:
 
 Pages/Index.cshtml: The main UI for the chatbot.
@@ -173,14 +160,8 @@ Distributed under the MIT License. See LICENSE for more information.
 Contact
 Provide ways for users to contact you.
 
-Your Name - @YourTwitterHandle (Optional)
-Project Link: https://github.com/your_username/your_repository_name
-Email: your.email@example.com (Optional)
-
-Acknowledgments
-Give credit to any resources, libraries, or individuals that helped you.
-
-ChooseAnOpenSourceLicense.com
+Your Name - https://github.com/niravpatel01
+Email: niravpatel01@yahoo.com (Optional)
 
 Shields.io (for badges)
 
