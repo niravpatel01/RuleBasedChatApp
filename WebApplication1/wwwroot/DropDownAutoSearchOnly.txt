@@ -1,0 +1,127 @@
+@page
+@model WebApplication1.Pages.UIChatModel
+@{
+    ViewData["Title"] = "Support Chatbot";
+
+    // ✅ Sample list of applications/issues
+    var applications = new List<string> {
+        "Payment Issue", "Order Issue", "Report Issue", "Login Issue",
+        "Account Issue", "Delivery Issue", "Refund Issue", "Access Issue",
+        "System Issue", "Profile Issue", "Network Issue", "Booking Issue",
+        "Update Issue", "Subscription Issue", "Inquiry Issue", "Data Issue"
+    };
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<style>
+    body {
+        background-color: #f4f6fa;
+    }
+
+    .chat-container {
+        max-width: 750px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #F1F2F9;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .autocomplete-container {
+        position: relative;
+        width: 50%;
+    }
+
+    /* ✅ Dropdown suggestion box */
+    .autocomplete-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    .autocomplete-item {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+        .autocomplete-item:hover {
+            background-color: #f0f0f0;
+        }
+</style>
+
+<div class="chat-container">
+    <h5 class="mb-4">Support Chatbot</h5>
+
+    <div class="bot-line mb-3">
+        <div class="bot-msg">
+            Start typing to search and select the application you need help with.
+        </div>
+    </div>
+
+    <!-- ✅ Searchable input with dropdown suggestions -->
+    <div class="autocomplete-container">
+        <input type="text" id="appInput" class="form-control" placeholder="Type to search..." autocomplete="off" />
+        <div id="suggestions" class="autocomplete-list" style="display:none;"></div>
+    </div>
+</div>
+
+<script>
+    // ✅ Full list of applications
+    const apps = [
+        "Payment Issue", "Order Issue", "Report Issue", "Login Issue",
+        "Account Issue", "Delivery Issue", "Refund Issue", "Access Issue",
+        "System Issue", "Profile Issue", "Network Issue", "Booking Issue",
+        "Update Issue", "Subscription Issue", "Inquiry Issue", "Data Issue"
+    ];
+
+    const input = document.getElementById('appInput');
+    const suggestionsBox = document.getElementById('suggestions');
+
+    input.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        suggestionsBox.innerHTML = '';
+
+        if (query.length === 0) {
+            suggestionsBox.style.display = 'none';
+            return;
+        }
+
+        // ✅ Filter applications
+        const matches = apps.filter(app => app.toLowerCase().includes(query));
+
+        if (matches.length > 0) {
+            matches.forEach(match => {
+                const div = document.createElement('div');
+                div.textContent = match;
+                div.classList.add('autocomplete-item');
+
+                // ✅ Click to select
+                div.onclick = () => {
+                    input.value = match;
+                    suggestionsBox.style.display = 'none';
+                    console.log("Selected:", match); // 🔥 Here you can trigger form submit or AJAX
+                };
+
+                suggestionsBox.appendChild(div);
+            });
+            suggestionsBox.style.display = 'block';
+        } else {
+            suggestionsBox.style.display = 'none';
+        }
+    });
+
+    // ✅ Hide dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!document.querySelector('.autocomplete-container').contains(e.target)) {
+            suggestionsBox.style.display = 'none';
+        }
+    });
+</script>
