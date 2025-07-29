@@ -108,15 +108,18 @@
                     🤖
                 </div>
                 <div class="bot-msg">
-                    @msg.Text
+                   
+
+                    @if (msg.Text.Contains("Submit"))
+                    {
 
 
-                        @* <div class="container mt-5">
+                        <div class="container mt-5" style="padding:0px;">
                             <h2 class="text-center mb-4">How to Submit a Ticket</h2>
 
                             <!-- Step 1 -->
                             <div class="step-card d-flex align-items-start">
-                                <div class="step-number">1</div>
+                                <div class="step-number">1.</div>
                                 <div>
                                     <div class="step-title">Login to the Helpdesk Portal</div>
                                     <p>
@@ -128,7 +131,7 @@
 
                             <!-- Step 2 -->
                             <div class="step-card d-flex align-items-start">
-                                <div class="step-number">2</div>
+                                <div class="step-number">2.</div>
                                 <div>
                                     <div class="step-title">Fill Out the Ticket Form</div>
                                     <p>Select the issue category, describe your problem clearly, and attach any screenshots if necessary.</p>
@@ -137,7 +140,7 @@
 
                             <!-- Step 3 -->
                             <div class="step-card d-flex align-items-start">
-                                <div class="step-number">3</div>
+                                <div class="step-number">3.</div>
                                 <div>
                                     <div class="step-title">Submit and Track Your Ticket</div>
                                     <p>Click the “Submit” button. You can track the progress of your ticket under the <strong>My Requests</strong> section.</p>
@@ -145,16 +148,18 @@
                             </div>
 
                             <div class="text-center mt-4">
-                            <button class="btn btn-primary" target="_blank" onclick="window.location.href='http://www.google.com'">
-                                Submit New Ticket
-                            </button>
+                                <button class="btn btn-primary" target="_blank" onclick="window.location.href='http://www.google.com'">
+                                    Submit New Ticket
+                                </button>
 
                             </div>
-                        </div> *@
-                  
+                        </div>
 
-
-
+                    }
+                    else
+                    {
+                        @msg.Text
+                    } 
 
 
 

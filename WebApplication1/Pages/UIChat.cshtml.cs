@@ -71,22 +71,22 @@ namespace WebApplication1.Pages
         }
         public void OnGet()
         {
-            ChatMessages.Add(new Message { From = "bot", Text = "Hello! How can I help you today?" });
+            ChatMessages.Add(new Message { From = "bot", Text = "Hello! Please tell us the name of the app you're facing trouble with?" });
 
             //Options = _issueTable.AsEnumerable()
             //    .Where(r => string.IsNullOrWhiteSpace(r["ParentID"].ToString()))
             //    .Select(r => r["Label"].ToString())
             //    .ToList();
 
-            //TempData["ChatHistory"] = JsonSerializer.Serialize(ChatMessages);
+            TempData["ChatHistory"] = JsonSerializer.Serialize(ChatMessages);
 
-            Options = new List<string>();
+           Options = new List<string>();
         }
 
         public IActionResult OnPostAsk()
         {
             ChatMessages.Clear();
-            ChatMessages.Add(new Message { From = "bot", Text = "Hello! How can I help you today?" });
+            ChatMessages.Add(new Message { From = "bot", Text = "Hello! Please tell us the name of the app you're facing trouble with?" });
 
             ChatMessages.Add(new Message { From = "user", Text = UserQuestion });
 
@@ -114,7 +114,7 @@ namespace WebApplication1.Pages
             if (selectedOption.ToLower().Contains("help with something else"))
             {
                 ChatMessages.Clear();
-                ChatMessages.Add(new Message { From = "bot", Text = "Hello! How can I help you today?" });
+                ChatMessages.Add(new Message { From = "bot", Text = "Hello! Please tell us the name of the app you're facing trouble with?" });
 
 
 
